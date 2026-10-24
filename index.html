@@ -1,441 +1,482 @@
-<!DOCTYPE html<!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SANA Official - Tampil Anggun Setiap Hari</title>
+    <title>SANA Official - Tampil Anggun, Setiap Hari</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind Config Customization -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sana: {
+                            navy: '#122543', /* Dark navy blue from logo/buttons */
+                            soft: '#f5f3f0', /* Soft beige background */
+                            gray: '#6b7280',
+                            gold: '#fbbf24',
+                            border: '#e5e7eb'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .font-playfair { font-family: 'Playfair Display', serif; }
+        /* Custom styles to hide scrollbar but allow scrolling */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="font-sans text-gray-800 antialiased bg-white">
 
-<!-- Navigasi -->
-<nav class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-        <div class="text-2xl font-playfair font-bold text-slate-800 flex items-center gap-2">
-            <svg class="w-8 h-8 text-slate-800" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13.5h-13L12 6.5z"/></svg>
-            SANA<br>CLOTH
-        </div>
-        <div class="hidden md:flex space-x-8">
-            <a href="#" class="text-slate-800 font-medium border-b-2 border-slate-800 pb-1">Beranda</a>
-            <a href="#koleksi" class="text-gray-500 hover:text-slate-800 transition">Koleksi</a>
-            <a href="#tentang-kami" class="text-gray-500 hover:text-slate-800 transition">Tentang Kami</a>
-            <a href="#kontak" class="text-gray-500 hover:text-slate-800 transition">Kontak</a>
-        </div>
-        <div class="flex space-x-5">
-            <button class="text-gray-600 hover:text-slate-800"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
-            <button class="text-gray-600 hover:text-slate-800"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg></button>
-            <button class="text-gray-600 hover:text-slate-800 relative">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                <span class="absolute -top-2 -right-2 bg-slate-800 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
-            </button>
-        </div>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<header class="bg-[#F4F1ED] py-16 md:py-24 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center relative z-10">
-        <div>
-            <p class="text-slate-600 font-medium mb-2 tracking-wide uppercase text-sm">Tampil Anggun, Setiap Hari</p>
-            <h1 class="text-5xl md:text-7xl font-playfair font-bold text-[#1a2f4c] leading-tight mb-6">SANA<br>CLOTH</h1>
-            <p class="text-gray-600 mb-8 max-w-md">Pakaian wanita modern dengan desain minimalis dan kualitas terbaik, untuk menemani setiap langkahmu.</p>
-            <a href="#koleksi" class="inline-block bg-[#1a2f4c] text-white px-8 py-3 rounded-full hover:bg-slate-700 transition">Belanja Sekarang &rarr;</a>
-        </div>
-        <div class="h-[400px] md:h-[500px] rounded-bl-[100px] rounded-tr-[100px] overflow-hidden shadow-xl bg-gray-300">
-            <!-- Ganti src ini dengan link gambar model Anda -->
-            <img src="https://images.unsplash.com/photo-1515347619353-b0eb0a514d79?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Model SANA Cloth" class="w-full h-full object-cover">
-        </div>
-    </div>
-</header>
-
-<!-- Benefit / Keunggulan -->
-<section class="border-b border-gray-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-        <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-            <div><p class="font-semibold text-slate-800">Pengiriman Cepat</p><p class="text-gray-500 text-xs">Seluruh Indonesia</p></div>
-        </div>
-        <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <div><p class="font-semibold text-slate-800">Produk Original</p><p class="text-gray-500 text-xs">100% Brand Terjamin</p></div>
-        </div>
-        <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
-            <div><p class="font-semibold text-slate-800">Pembayaran Aman</p><p class="text-gray-500 text-xs">Banyak Metode Pembayaran</p></div>
-        </div>
-        <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-            <div><p class="font-semibold text-slate-800">Customer Service</p><p class="text-gray-500 text-xs">Siap Membantu 08.00 - 22.00</p></div>
-        </div>
-    </div>
-</section>
-
-<!-- Koleksi -->
-<section id="koleksi" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24 mt-[-80px]">
-    <div class="flex justify-between items-center mb-8">
-        <h2 class="text-2xl font-bold text-[#1a2f4c]">Produk Terbaru</h2>
-        <a href="#" class="text-sm text-[#1a2f4c] font-medium hover:underline">Lihat Semua &rarr;</a>
-    </div>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Produk 1 -->
-        <div class="bg-white rounded-xl overflow-hidden group">
-            <div class="bg-gray-100 h-80 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Blouse" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-sm text-gray-400 hover:text-red-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg></button>
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 text-sana-navy">
+                <i class="fa-solid fa-leaf text-3xl"></i>
+                <div>
+                    <h1 class="font-serif text-2xl font-bold leading-none tracking-wider">SANA</h1>
+                    <p class="text-[0.65rem] uppercase tracking-[0.2em] font-semibold">C l o t h</p>
+                </div>
             </div>
-            <div class="p-4">
-                <h3 class="font-semibold text-[#1a2f4c] text-lg">Blouse Lengan Balon</h3>
-                <p class="text-sm text-gray-500 mb-2">Cotton Premium</p>
-                <div class="flex justify-between items-center">
-                    <p class="font-bold text-[#1a2f4c]">Rp 159.000</p>
-                    <div class="flex items-center text-xs text-gray-500"><span class="text-yellow-400 mr-1">★</span> 4.8 (120)</div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#" class="text-sana-navy border-b-2 border-sana-navy pb-1">Beranda</a>
+                <a href="#" class="text-gray-500 hover:text-sana-navy transition">Koleksi</a>
+                <a href="#" class="text-gray-500 hover:text-sana-navy transition">Tentang Kami</a>
+                <a href="#" class="text-gray-500 hover:text-sana-navy transition">Kontak</a>
+            </nav>
+
+            <!-- Icons -->
+            <div class="flex items-center gap-5 text-sana-navy">
+                <button class="hover:text-gray-500 transition"><i class="fa-solid fa-magnifying-glass text-lg"></i></button>
+                <button class="hover:text-gray-500 transition hidden sm:block"><i class="fa-regular fa-user text-lg"></i></button>
+                <button class="hover:text-gray-500 transition relative">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span class="absolute -top-2 -right-2 bg-sana-navy text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-sana-soft relative overflow-hidden">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 py-12 md:py-24 z-10 relative">
+                    <p class="text-sm font-medium text-sana-navy mb-4 tracking-wide">Tampil Anggun, Setiap Hari</p>
+                    <h2 class="font-serif text-5xl md:text-7xl font-bold text-sana-navy leading-tight mb-2">SANA</h2>
+                    <h2 class="font-serif text-4xl md:text-5xl tracking-[0.2em] text-sana-navy mb-6">CLOTH</h2>
+                    <p class="text-gray-600 mb-8 max-w-md text-sm md:text-base leading-relaxed">
+                        Pakaian wanita modern dengan desain minimalis dan kualitas terbaik, untuk menemani setiap langkahmu.
+                    </p>
+                    <button class="bg-sana-navy text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-opacity-90 transition shadow-lg flex items-center gap-2 group">
+                        Belanja Sekarang 
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+                
+                <!-- Hero Image Placeholder (Right Side) -->
+                <div class="w-full md:w-1/2 h-[400px] md:h-[600px] relative">
+                    <!-- Decorative text -->
+                    <div class="absolute right-4 top-1/4 z-10 hidden lg:block transform rotate-12">
+                        <p class="font-serif text-4xl text-sana-navy opacity-80">Simple</p>
+                        <p class="font-serif text-5xl text-sana-navy opacity-80 ml-8">Elegant</p>
+                        <p class="font-serif text-4xl text-sana-navy opacity-80 ml-16">You</p>
+                    </div>
+                    <!-- Mock Image using placehold -->
+                    <img src="https://placehold.co/800x1000/e6e2da/122543?text=Hero+Image+(Model)" alt="Hero Model" class="w-full h-full object-cover object-center rounded-l-[100px] md:rounded-l-[200px] shadow-2xl">
+                    
+                    <!-- Slider Dots -->
+                    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                        <div class="w-2 h-2 rounded-full bg-sana-navy"></div>
+                        <div class="w-2 h-2 rounded-full bg-white opacity-60"></div>
+                        <div class="w-2 h-2 rounded-full bg-white opacity-60"></div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Produk 2 -->
-        <div class="bg-white rounded-xl overflow-hidden group">
-            <div class="bg-gray-100 h-80 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dress" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-sm text-gray-400 hover:text-red-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg></button>
-            </div>
-            <div class="p-4">
-                <h3 class="font-semibold text-[#1a2f4c] text-lg">Dress Maxi Polos</h3>
-                <p class="text-sm text-gray-500 mb-2">Milo Crepe Premium</p>
-                <div class="flex justify-between items-center">
-                    <p class="font-bold text-[#1a2f4c]">Rp 229.000</p>
-                    <div class="flex items-center text-xs text-gray-500"><span class="text-yellow-400 mr-1">★</span> 4.9 (98)</div>
+    <!-- Features Section -->
+    <section class="border-b border-sana-border">
+        <div class="container mx-auto px-4 lg:px-8 py-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
+                <div class="flex items-center gap-4 lg:border-r border-sana-border pb-4 sm:pb-0">
+                    <i class="fa-solid fa-truck-fast text-2xl text-sana-navy"></i>
+                    <div>
+                        <h4 class="font-semibold text-sana-navy">Pengiriman Cepat</h4>
+                        <p class="text-xs text-gray-500">Seluruh Indonesia</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 lg:border-r border-sana-border pb-4 sm:pb-0">
+                    <i class="fa-solid fa-shield-check text-2xl text-sana-navy"></i>
+                    <div>
+                        <h4 class="font-semibold text-sana-navy">Produk Original</h4>
+                        <p class="text-xs text-gray-500">100% Brand Terjamin</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 lg:border-r border-sana-border pb-4 sm:pb-0">
+                    <i class="fa-regular fa-credit-card text-2xl text-sana-navy"></i>
+                    <div>
+                        <h4 class="font-semibold text-sana-navy">Pembayaran Aman</h4>
+                        <p class="text-xs text-gray-500">Banyak Metode Pembayaran</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-headset text-2xl text-sana-navy"></i>
+                    <div>
+                        <h4 class="font-semibold text-sana-navy">Customer Service</h4>
+                        <p class="text-xs text-gray-500">Siap Membantu 08.00 - 22.00</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Produk 3 -->
-        <div class="bg-white rounded-xl overflow-hidden group">
-            <div class="bg-gray-100 h-80 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1596783049103-6250ce4826b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kemeja" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-sm text-gray-400 hover:text-red-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg></button>
-            </div>
-            <div class="p-4">
-                <h3 class="font-semibold text-[#1a2f4c] text-lg">Kemeja Oversize</h3>
-                <p class="text-sm text-gray-500 mb-2">Cotton Premium</p>
-                <div class="flex justify-between items-center">
-                    <p class="font-bold text-[#1a2f4c]">Rp 179.000</p>
-                    <div class="flex items-center text-xs text-gray-500"><span class="text-yellow-400 mr-1">★</span> 4.7 (84)</div>
+    <!-- Categories Section -->
+    <section class="py-16 container mx-auto px-4 lg:px-8">
+        <div class="flex justify-between items-end mb-8">
+            <h3 class="text-2xl font-bold text-sana-navy">Belanja Berdasarkan Kategori</h3>
+            <a href="#" class="text-sm text-sana-navy font-medium hover:underline flex items-center gap-1">
+                Lihat Semua <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+        
+        <div class="flex overflow-x-auto hide-scrollbar gap-4 md:grid md:grid-cols-6 md:gap-6 pb-4">
+            <!-- Category 1 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Atasan" alt="Atasan" class="w-full h-full object-cover">
                 </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Atasan</h4>
+            </div>
+            <!-- Category 2 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Dress" alt="Dress" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Dress</h4>
+            </div>
+            <!-- Category 3 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Rok" alt="Rok" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Rok</h4>
+            </div>
+            <!-- Category 4 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Celana" alt="Celana" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Celana</h4>
+            </div>
+            <!-- Category 5 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Outer" alt="Outer" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Outer</h4>
+            </div>
+            <!-- Category 6 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Hijab" alt="Hijab & Aksesoris" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Hijab & Aksesoris</h4>
             </div>
         </div>
+    </section>
 
-        <!-- Produk 4 -->
-        <div class="bg-white rounded-xl overflow-hidden group">
-            <div class="bg-gray-100 h-80 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1624897044036-7c9171f6526e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kulot" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-sm text-gray-400 hover:text-red-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg></button>
+    <!-- Product Section -->
+    <section class="py-12 bg-gray-50/50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-end mb-8">
+                <h3 class="text-2xl font-bold text-sana-navy">Produk Terbaru</h3>
+                <a href="#" class="text-sm text-sana-navy font-medium hover:underline flex items-center gap-1">
+                    Lihat Semua <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
             </div>
-            <div class="p-4">
-                <h3 class="font-semibold text-[#1a2f4c] text-lg">Celana Kulot</h3>
-                <p class="text-sm text-gray-500 mb-2">Waffle Premium</p>
-                <div class="flex justify-between items-center">
-                    <p class="font-bold text-[#1a2f4c]">Rp 149.000</p>
-                    <div class="flex items-center text-xs text-gray-500"><span class="text-yellow-400 mr-1">★</span> 4.8 (76)</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Tentang Kami -->
-<section id="tentang-kami" class="bg-white py-16 pt-24 mt-[-80px]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold text-[#1a2f4c] mb-12 text-center md:text-left">Mengapa Memilih SANA Cloth?</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="flex flex-col items-center md:items-start">
-                <div class="bg-[#F4F1ED] p-4 rounded-full mb-4">
-                    <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative border border-gray-100 p-2">
+                    <button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 transition backdrop-blur-sm shadow-sm">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="relative overflow-hidden rounded-lg bg-sana-soft h-64 md:h-80 mb-4">
+                        <img src="https://placehold.co/400x500/e8e6e1/122543?text=Blouse" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="font-semibold text-sana-navy text-sm mb-1 truncate">Blouse Lengan Balon</h4>
+                        <p class="text-xs text-gray-500 mb-3">Cotton Premium</p>
+                        <div class="flex items-end justify-between">
+                            <span class="font-bold text-sana-navy">Rp 159.000</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fa-solid fa-star text-sana-gold text-[10px]"></i>
+                                <span class="text-xs text-gray-600">4.8 <span class="text-gray-400">(120)</span></span>
+                            </div>
+                        </div>
+                        <div class="mt-3 flex gap-1">
+                            <span class="block w-3 h-3 rounded-full bg-[#f4f1e1] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#4a5568] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#e2e8f0] border border-gray-200"></span>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="font-semibold text-slate-800 mb-2">Desain Eksklusif</h3>
-                <p class="text-sm text-gray-500 text-center md:text-left">Model selalu up to date dan kekinian mengikuti tren terbaru.</p>
-            </div>
-            <div class="flex flex-col items-center md:items-start">
-                <div class="bg-[#F4F1ED] p-4 rounded-full mb-4">
-                    <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
-                </div>
-                <h3 class="font-semibold text-slate-800 mb-2">Kualitas Terbaik</h3>
-                <p class="text-sm text-gray-500 text-center md:text-left">Bahan nyaman, adem, jahitan rapi, dan awet tahan lama.</p>
-            </div>
-            <div class="flex flex-col items-center md:items-start">
-                <div class="bg-[#F4F1ED] p-4 rounded-full mb-4">
-                    <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                </div>
-                <h3 class="font-semibold text-slate-800 mb-2">Harga Terjangkau</h3>
-                <p class="text-sm text-gray-500 text-center md:text-left">Tampil stylish elegan tanpa harus menguras kantong.</p>
-            </div>
-            <div class="flex flex-col items-center md:items-start">
-                <div class="bg-[#F4F1ED] p-4 rounded-full mb-4">
-                    <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                </div>
-                <h3 class="font-semibold text-slate-800 mb-2">Kepuasan Pelanggan</h3>
-                <p class="text-sm text-gray-500 text-center md:text-left">Ribuan pelanggan merasa puas dan telah membuktikannya.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Kontak & Footer -->
-<footer id="kontak" class="bg-[#1a2f4c] text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-8">
-        <div class="md:col-span-4">
-            <div class="text-2xl font-playfair font-bold mb-4 flex items-center gap-2">
-                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13.5h-13L12 6.5z"/></svg>
-                SANA CLOTH
-            </div>
-            <p class="text-sm text-gray-300 mb-6 max-w-xs">Fashion sederhana, untuk kamu yang luar biasa. Temukan gaya terbaikmu bersama kami.</p>
-            <div class="flex space-x-4">
-                <a href="#" class="bg-white/10 p-2 rounded-full hover:bg-white/20 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                <a href="#" class="bg-white/10 p-2 rounded-full hover:bg-white/20 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
-                <a href="#" class="bg-white/10 p-2 rounded-full hover:bg-white/20 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-            </div>
-        </div>
-        <div class="md:col-span-2">
-            <h4 class="font-semibold mb-4 text-white">Navigasi</h4>
-            <ul class="text-sm text-gray-400 space-y-3">
-                <li><a href="#" class="hover:text-white transition">Beranda</a></li>
-                <li><a href="#koleksi" class="hover:text-white transition">Koleksi</a></li>
-                <li><a href="#tentang-kami" class="hover:text-white transition">Tentang Kami</a></li>
-                <li><a href="#kontak" class="hover:text-white transition">Kontak</a></li>
-            </ul>
-        </div>
-        <div class="md:col-span-2">
-            <h4 class="font-semibold mb-4 text-white">Kategori</h4>
-            <ul class="text-sm text-gray-400 space-y-3">
-                <li><a href="#koleksi" class="hover:text-white transition">Atasan</a></li>
-                <li><a href="#koleksi" class="hover:text-white transition">Dress</a></li>
-                <li><a href="#koleksi" class="hover:text-white transition">Rok</a></li>
-                <li><a href="#koleksi" class="hover:text-white transition">Hijab & Aksesoris</a></li>
-            </ul>
-        </div>
-        <div class="md:col-span-4">
-            <h4 class="font-semibold mb-4 text-white">Newsletter</h4>
-            <p class="text-sm text-gray-400 mb-4">Dapatkan informasi produk terbaru, promo spesial dan update koleksi kami.</p>
-            <div class="flex">
-                <input type="email" placeholder="Masukkan email kamu" class="px-4 py-3 rounded-l-full w-full text-gray-800 outline-none text-sm">
-                <button class="bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-r-full transition"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></button>
-            </div>
-        </div>
-    </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-700 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center">
-        <p class="mb-4 md:mb-0">&copy; 2026 SANA Cloth. All rights reserved.</p>
-        <p>Syarat & Ketentuan &nbsp;|&nbsp; Kebijakan Privasi</p>
-    </div>
-</footer>
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative border border-gray-100 p-2">
+                    <button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 transition backdrop-blur-sm shadow-sm">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="relative overflow-hidden rounded-lg bg-sana-soft h-64 md:h-80 mb-4">
+                        <img src="https://placehold.co/400x500/e8e6e1/122543?text=Dress" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="font-semibold text-sana-navy text-sm mb-1 truncate">Dress Maxi Polos</h4>
+                        <p class="text-xs text-gray-500 mb-3">Milo Crepe Premium</p>
+                        <div class="flex items-end justify-between">
+                            <span class="font-bold text-sana-navy">Rp 229.000</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fa-solid fa-star text-sana-gold text-[10px]"></i>
+                                <span class="text-xs text-gray-600">4.9 <span class="text-gray-400">(98)</span></span>
+                            </div>
+                        </div>
+                        <div class="mt-3 flex gap-1">
+                            <span class="block w-3 h-3 rounded-full bg-[#dca6a6] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#2d3748] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#cbd5e1] border border-gray-200"></span>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Tombol Kembali ke Atas -->
-<a href="#" class="fixed bottom-6 right-6 bg-white text-[#1a2f4c] p-3 rounded-full shadow-lg hover:shadow-xl transition z-50 border border-gray-100">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
-</a>
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative border border-gray-100 p-2">
+                    <button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 transition backdrop-blur-sm shadow-sm">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="relative overflow-hidden rounded-lg bg-sana-soft h-64 md:h-80 mb-4">
+                        <img src="https://placehold.co/400x500/e8e6e1/122543?text=Kemeja" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="font-semibold text-sana-navy text-sm mb-1 truncate">Kemeja Oversize</h4>
+                        <p class="text-xs text-gray-500 mb-3">Cotton Premium</p>
+                        <div class="flex items-end justify-between">
+                            <span class="font-bold text-sana-navy">Rp 179.000</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fa-solid fa-star text-sana-gold text-[10px]"></i>
+                                <span class="text-xs text-gray-600">4.7 <span class="text-gray-400">(84)</span></span>
+                            </div>
+                        </div>
+                        <div class="mt-3 flex gap-1">
+                            <span class="block w-3 h-3 rounded-full bg-black border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#e2e8f0] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#c2a688] border border-gray-200"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative border border-gray-100 p-2">
+                    <button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 transition backdrop-blur-sm shadow-sm">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="relative overflow-hidden rounded-lg bg-sana-soft h-64 md:h-80 mb-4">
+                        <img src="https://placehold.co/400x500/e8e6e1/122543?text=Kulot" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="font-semibold text-sana-navy text-sm mb-1 truncate">Celana Kulot</h4>
+                        <p class="text-xs text-gray-500 mb-3">Waffle Premium</p>
+                        <div class="flex items-end justify-between">
+                            <span class="font-bold text-sana-navy">Rp 149.000</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fa-solid fa-star text-sana-gold text-[10px]"></i>
+                                <span class="text-xs text-gray-600">4.8 <span class="text-gray-400">(76)</span></span>
+                            </div>
+                        </div>
+                        <div class="mt-3 flex gap-1">
+                            <span class="block w-3 h-3 rounded-full bg-[#f8fafc] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#e2e8f0] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#c2a688] border border-gray-200"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banner Section -->
+    <section class="py-12 container mx-auto px-4 lg:px-8">
+        <div class="bg-sana-soft rounded-2xl overflow-hidden relative flex flex-col md:flex-row items-center">
+            <div class="p-8 md:p-12 w-full md:w-1/2 z-10 relative">
+                <div class="flex items-center gap-2 text-sana-navy mb-3">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span class="font-semibold text-sm">Koleksi Terbaru</span>
+                </div>
+                <h3 class="font-serif text-4xl md:text-5xl font-bold text-sana-navy mb-2">Diskon Spesial</h3>
+                <p class="text-gray-600 mb-6 text-sm md:text-base">Hingga 50% untuk koleksi pilihan</p>
+                <button class="bg-sana-navy text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition flex items-center gap-2 group w-fit">
+                    Belanja Sekarang 
+                    <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            
+            <div class="w-full md:w-1/2 h-64 md:h-full relative">
+                <!-- Using placehold to simulate the rack of clothes -->
+                <img src="https://placehold.co/800x400/e2dcd0/122543?text=Promo+Image" alt="Promo" class="w-full h-full object-cover">
+                <!-- Decorative text -->
+                <div class="absolute bottom-8 right-8 z-10 transform -rotate-12 hidden md:block">
+                    <p class="font-serif text-3xl text-sana-navy opacity-70">Good</p>
+                    <p class="font-serif text-3xl text-sana-navy opacity-70 ml-4">Clothes</p>
+                    <p class="font-serif text-3xl text-sana-navy opacity-70 ml-8">Good</p>
+                    <p class="font-serif text-3xl text-sana-navy opacity-70 ml-12">Mood <i class="fa-regular fa-heart text-xl"></i></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 container mx-auto px-4 lg:px-8 border-t border-gray-100">
+        <h3 class="text-2xl font-bold text-sana-navy mb-10">Mengapa Memilih SANA Cloth?</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-full border border-sana-border flex items-center justify-center shrink-0 text-sana-navy bg-white">
+                    <i class="fa-solid fa-leaf text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sana-navy text-sm mb-1">Desain Eksklusif</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Model selalu up to date dan kekinian.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-full border border-sana-border flex items-center justify-center shrink-0 text-sana-navy bg-white">
+                    <i class="fa-regular fa-gem text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sana-navy text-sm mb-1">Kualitas Terbaik</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Bahan nyaman, adem dan tahan lama.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-full border border-sana-border flex items-center justify-center shrink-0 text-sana-navy bg-white">
+                    <i class="fa-regular fa-heart text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sana-navy text-sm mb-1">Harga Terjangkau</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Tampil stylish tanpa menguras kantong.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-full border border-sana-border flex items-center justify-center shrink-0 text-sana-navy bg-white">
+                    <i class="fa-regular fa-star text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sana-navy text-sm mb-1">Kepuasan Pelanggan</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Ribuan pelanggan puas telah membuktikan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sana-navy text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="lg:col-span-4">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-leaf text-3xl text-white"></i>
+                        <div>
+                            <h1 class="font-serif text-2xl font-bold leading-none tracking-wider text-white">SANA</h1>
+                            <p class="text-[0.65rem] uppercase tracking-[0.2em] font-semibold text-white">C l o t h</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-6 max-w-sm">
+                        Fashion sederhana, untuk kamu yang luar biasa.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-sana-navy transition"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-sana-navy transition"><i class="fa-brands fa-tiktok text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-sana-navy transition"><i class="fa-brands fa-youtube text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-sana-navy transition"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#" class="hover:text-white transition">Koleksi</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold mb-4">Kategori</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Atasan</a></li>
+                        <li><a href="#" class="hover:text-white transition">Dress</a></li>
+                        <li><a href="#" class="hover:text-white transition">Rok</a></li>
+                        <li><a href="#" class="hover:text-white transition">Celana</a></li>
+                        <li><a href="#" class="hover:text-white transition">Outer</a></li>
+                        <li><a href="#" class="hover:text-white transition">Hijab & Aksesoris</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="lg:col-span-4">
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-sm text-gray-300 mb-4">Dapatkan informasi produk terbaru, promo spesial dan update koleksi kami.</p>
+                    <form class="relative">
+                        <input type="email" placeholder="Masukkan email kamu" class="w-full bg-white text-gray-800 rounded-full py-3 pl-4 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300">
+                        <button type="submit" class="absolute right-1 top-1 w-9 h-9 bg-sana-navy text-white rounded-full flex items-center justify-center hover:opacity-90 transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-4">
+                <p>&copy; 2026 SANA Cloth. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition">Syarat & Ketentuan</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-white transition">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to top button -->
+        <a href="#" class="fixed bottom-6 right-6 w-10 h-10 bg-white text-sana-navy rounded-full flex items-center justify-center shadow-lg hover:-translate-y-1 transition-transform z-50">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+    </footer>
 
 </body>
 </html>
-<html lang="id" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SANA CLOTH - Tampil Anggun Setiap Hari</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .font-playfair { font-family: 'Playfair Display', serif; }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
-
-<!-- Navigasi -->
-<nav class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-        <div class="text-2xl font-playfair font-bold text-slate-800 flex items-center gap-2">
-            <svg class="w-8 h-8 text-slate-800" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13.5h-13L12 6.5z"/></svg>
-            SANA<br>CLOTH
-        </div>
-        <div class="hidden md:flex space-x-8">
-            <a href="#" class="text-slate-800 font-medium border-b-2 border-slate-800 pb-1">Beranda</a>
-            <a href="#koleksi" class="text-gray-500 hover:text-slate-800 transition">Koleksi</a>
-            <a href="#tentang-kami" class="text-gray-500 hover:text-slate-800 transition">Tentang Kami</a>
-            <a href="#kontak" class="text-gray-500 hover:text-slate-800 transition">Kontak</a>
-        </div>
-        <div class="flex space-x-5">
-            <button class="text-gray-600 hover:text-slate-800"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
-            <button class="text-gray-600 hover:text-slate-800"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg></button>
-            <button class="text-gray-600 hover:text-slate-800 relative">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                <span class="absolute -top-2 -right-2 bg-slate-800 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
-            </button>
-        </div>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<header class="bg-[#F4F1ED] py-16 md:py-24 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center relative z-10">
-        <div>
-            <p class="text-slate-600 font-medium mb-2 tracking-wide uppercase text-sm">Tampil Anggun, Setiap Hari</p>
-            <h1 class="text-5xl md:text-7xl font-playfair font-bold text-[#1a2f4c] leading-tight mb-6">SANA<br>CLOTH</h1>
-            <p class="text-gray-600 mb-8 max-w-md">Pakaian wanita modern dengan desain minimalis dan kualitas terbaik, untuk menemani setiap langkahmu.</p>
-            <a href="#koleksi" class="inline-block bg-[#1a2f4c] text-white px-8 py-3 rounded-full hover:bg-slate-700 transition">Belanja Sekarang &rarr;</a>
-        </div>
-        <div class="h-[400px] md:h-[500px] rounded-bl-[100px] rounded-tr-[100px] overflow-hidden shadow-xl bg-gray-300">
-            <!-- Ganti src ini dengan link gambar model Anda -->
-            <img src="https://images.unsplash.com/photo-1515347619353-b0eb0a514d79?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Model SANA Cloth" class="w-full h-full object-cover">
-        </div>
-    </div>
-</header>
-
-<!-- Benefit / Keunggulan -->
-<section class="border-b border-gray-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-        <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-            <div><p class="font-semibold text-slate-800">Pengiriman Cepat</p><p class="text-gray-500 text-xs">Seluruh Indonesia</p></div>
-        </div>
-        <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <div><p class="font-semibold text-slate-800">Produk Original</p><p class="text-gray-500 text-xs">100% Brand Terjamin</p></div>
-        </div>
-        <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
-            <div><p class="font-semibold text-slate-800">Pembayaran Aman</p><p class="text-gray-500 text-xs">Banyak Metode Pembayaran</p></div>
-        </div>
-        <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-            <div><p class="font-semibold text-slate-800">Customer Service</p><p class="text-gray-500 text-xs">Siap Membantu 08.00 - 22.00</p></div>
-        </div>
-    </div>
-</section>
-
-<!-- Koleksi -->
-<section id="koleksi" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24 mt-[-80px]">
-    <div class="flex justify-between items-center mb-8">
-        <h2 class="text-2xl font-bold text-[#1a2f4c]">Produk Terbaru</h2>
-        <a href="#" class="text-sm text-[#1a2f4c] font-medium hover:underline">Lihat Semua &rarr;</a>
-    </div>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Produk 1 -->
-        <div class="bg-white rounded-xl overflow-hidden group">
-            <div class="bg-gray-100 h-80 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Blouse" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-sm text-gray-400 hover:text-red-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg></button>
-            </div>
-            <div class="p-4">
-                <h3 class="font-semibold text-[#1a2f4c] text-lg">Blouse Lengan Balon</h3>
-                <p class="text-sm text-gray-500 mb-2">Cotton Premium</p>
-                <div class="flex justify-between items-center">
-                    <p class="font-bold text-[#1a2f4c]">Rp 159.000</p>
-                    <div class="flex items-center text-xs text-gray-500"><span class="text-yellow-400 mr-1">★</span> 4.8 (120)</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Produk 2 -->
-        <div class="bg-white rounded-xl overflow-hidden group">
-            <div class="bg-gray-100 h-80 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dress" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-sm text-gray-400 hover:text-red-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg></button>
-            </div>
-            <div class="p-4">
-                <h3 class="font-semibold text-[#1a2f4c] text-lg">Dress Maxi Polos</h3>
-                <p class="text-sm text-gray-500 mb-2">Milo Crepe Premium</p>
-                <div class="flex justify-between items-center">
-                    <p class="font-bold text-[#1a2f4c]">Rp 229.000</p>
-                    <div class="flex items-center text-xs text-gray-500"><span class="text-yellow-400 mr-1">★</span> 4.9 (98)</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Produk 3 -->
-        <div class="bg-white rounded-xl overflow-hidden group">
-            <div class="bg-gray-100 h-80 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1596783049103-6250ce4826b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kemeja" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-sm text-gray-400 hover:text-red-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg></button>
-            </div>
-            <div class="p-4">
-                <h3 class="font-semibold text-[#1a2f4c] text-lg">Kemeja Oversize</h3>
-                <p class="text-sm text-gray-500 mb-2">Cotton Premium</p>
-                <div class="flex justify-between items-center">
-                    <p class="font-bold text-[#1a2f4c]">Rp 179.000</p>
-                    <div class="flex items-center text-xs text-gray-500"><span class="text-yellow-400 mr-1">★</span> 4.7 (84)</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Produk 4 -->
-        <div class="bg-white rounded-xl overflow-hidden group">
-            <div class="bg-gray-100 h-80 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1624897044036-7c9171f6526e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kulot" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-sm text-gray-400 hover:text-red-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg></button>
-            </div>
-            <div class="p-4">
-                <h3 class="font-semibold text-[#1a2f4c] text-lg">Celana Kulot</h3>
-                <p class="text-sm text-gray-500 mb-2">Waffle Premium</p>
-                <div class="flex justify-between items-center">
-                    <p class="font-bold text-[#1a2f4c]">Rp 149.000</p>
-                    <div class="flex items-center text-xs text-gray-500"><span class="text-yellow-400 mr-1">★</span> 4.8 (76)</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Tentang Kami -->
-<section id="tentang-kami" class="bg-white py-16 pt-24 mt-[-80px]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold text-[#1a2f4c] mb-12 text-center md:text-left">Mengapa Memilih SANA Cloth?</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="flex flex-col items-center md:items-start">
-                <div class="bg-[#F4F1ED] p-4 rounded-full mb-4">
-                    <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
-                </div>
-                <h3 class="font-semibold text-slate-800 mb-2">Desain Eksklusif</h3>
-                <p class="text-sm text-gray-500 text-center md:text-left">Model selalu up to date dan kekinian mengikuti tren terbaru.</p>
-            </div>
-            <div class="flex flex-col items-center md:items-start">
-                <div class="bg-[#F4F1ED] p-4 rounded-full mb-4">
-                    <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
-                </div>
-                <h3 class="font-semibold text-slate-800 mb-2">Kualitas Terbaik</h3>
-                <p class="text-sm text-gray-500 text-center md:text-left">Bahan nyaman, adem, jahitan rapi, dan awet tahan lama.</p>
-            </div>
-            <div class="flex flex-col items-center md:items-start">
-                <div class="bg-[#F4F1ED] p-4 rounded-full mb-4">
-                    <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                </div>
-                <h3 class="font-semibold text-slate-800 mb-2">Harga Terjangkau</h3>
-                <p class="text-sm text-gray-500 text-center md:text-left">Tampil stylish elegan tanpa harus menguras kantong.</p>
-            </div>
-            <div class="flex flex-col items-center md:items-start">
-                <div class="bg-[#F4F1ED] p-4 rounded-full mb-4">
-                    <svg class="w-8 h-8 text-[#1a2f4c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                </div>
-                <h3 class="font-semibold text-slate-800 mb-2">Kepuasan Pelanggan</h3>
-                <p class="text-sm text-gray-500 text-center md:text-left">Ribuan pelanggan merasa puas dan telah membuktikannya.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Kontak & Footer -->
-<footer id="kontak" class="bg-[#1a2f4c] text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-8">
-        <div class="md:col-span-4">
-            <div class="text-2xl font-playfair font-bold mb-4 flex items-center gap-2">
-                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13.5h-13L12 6.5z"/></svg>
-                SANA CLOTH
-            </div>
-            <p class="text-sm text-gray-300 mb-6 max-w-xs">Fashion sederhana, untuk kamu yang luar biasa. Temukan gaya terbaikmu bersama kami.</p>
-            <div class="flex space-x-4">
-                <a href="#" class="bg-white/10 p-2 rounded-full hover:bg-white/20 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162
