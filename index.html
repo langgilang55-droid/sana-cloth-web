@@ -1,1 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANA CLOTH - Tampil Anggun, Setiap Hari</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind Config Customization -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sana: {
+                            navy: '#122543', /* Dark navy blue from logo/buttons */
+                            soft: '#f5f3f0', /* Soft beige background */
+                            gray: '#6b7280',
+                            gold: '#fbbf24',
+                            border: '#e5e7eb'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles to hide scrollbar but allow scrolling */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-white">
 
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 text-sana-navy">
+                <i class="fa-solid fa-leaf text-3xl"></i>
+                <div>
+                    <h1 class="font-serif text-2xl font-bold leading-none tracking-wider">SANA</h1>
+                    <p class="text-[0.65rem] uppercase tracking-[0.2em] font-semibold">C l o t h</p>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#" class="text-sana-navy border-b-2 border-sana-navy pb-1">Beranda</a>
+                <a href="#" class="text-gray-500 hover:text-sana-navy transition">Koleksi</a>
+                <a href="#" class="text-gray-500 hover:text-sana-navy transition">Tentang Kami</a>
+                <a href="#" class="text-gray-500 hover:text-sana-navy transition">Kontak</a>
+            </nav>
+
+            <!-- Icons -->
+            <div class="flex items-center gap-5 text-sana-navy">
+                <button class="hover:text-gray-500 transition"><i class="fa-solid fa-magnifying-glass text-lg"></i></button>
+                <button class="hover:text-gray-500 transition hidden sm:block"><i class="fa-regular fa-user text-lg"></i></button>
+                <button class="hover:text-gray-500 transition relative">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span class="absolute -top-2 -right-2 bg-sana-navy text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-sana-soft relative overflow-hidden">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 py-12 md:py-24 z-10 relative">
+                    <p class="text-sm font-medium text-sana-navy mb-4 tracking-wide">Tampil Anggun, Setiap Hari</p>
+                    <h2 class="font-serif text-5xl md:text-7xl font-bold text-sana-navy leading-tight mb-2">SANA</h2>
+                    <h2 class="font-serif text-4xl md:text-5xl tracking-[0.2em] text-sana-navy mb-6">CLOTH</h2>
+                    <p class="text-gray-600 mb-8 max-w-md text-sm md:text-base leading-relaxed">
+                        Pakaian wanita modern dengan desain minimalis dan kualitas terbaik, untuk menemani setiap langkahmu.
+                    </p>
+                    <button class="bg-sana-navy text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-opacity-90 transition shadow-lg flex items-center gap-2 group">
+                        Belanja Sekarang 
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+                
+                <!-- Hero Image Placeholder (Right Side) -->
+                <div class="w-full md:w-1/2 h-[400px] md:h-[600px] relative">
+                    <!-- Decorative text -->
+                    <div class="absolute right-4 top-1/4 z-10 hidden lg:block transform rotate-12">
+                        <p class="font-serif text-4xl text-sana-navy opacity-80">Simple</p>
+                        <p class="font-serif text-5xl text-sana-navy opacity-80 ml-8">Elegant</p>
+                        <p class="font-serif text-4xl text-sana-navy opacity-80 ml-16">You</p>
+                    </div>
+                    <!-- Mock Image using placehold -->
+                    <img src="https://placehold.co/800x1000/e6e2da/122543?text=Hero+Image+(Model)" alt="Hero Model" class="w-full h-full object-cover object-center rounded-l-[100px] md:rounded-l-[200px] shadow-2xl">
+                    
+                    <!-- Slider Dots -->
+                    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                        <div class="w-2 h-2 rounded-full bg-sana-navy"></div>
+                        <div class="w-2 h-2 rounded-full bg-white opacity-60"></div>
+                        <div class="w-2 h-2 rounded-full bg-white opacity-60"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="border-b border-sana-border">
+        <div class="container mx-auto px-4 lg:px-8 py-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
+                <div class="flex items-center gap-4 lg:border-r border-sana-border pb-4 sm:pb-0">
+                    <i class="fa-solid fa-truck-fast text-2xl text-sana-navy"></i>
+                    <div>
+                        <h4 class="font-semibold text-sana-navy">Pengiriman Cepat</h4>
+                        <p class="text-xs text-gray-500">Seluruh Indonesia</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 lg:border-r border-sana-border pb-4 sm:pb-0">
+                    <i class="fa-solid fa-shield-check text-2xl text-sana-navy"></i>
+                    <div>
+                        <h4 class="font-semibold text-sana-navy">Produk Original</h4>
+                        <p class="text-xs text-gray-500">100% Brand Terjamin</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 lg:border-r border-sana-border pb-4 sm:pb-0">
+                    <i class="fa-regular fa-credit-card text-2xl text-sana-navy"></i>
+                    <div>
+                        <h4 class="font-semibold text-sana-navy">Pembayaran Aman</h4>
+                        <p class="text-xs text-gray-500">Banyak Metode Pembayaran</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-headset text-2xl text-sana-navy"></i>
+                    <div>
+                        <h4 class="font-semibold text-sana-navy">Customer Service</h4>
+                        <p class="text-xs text-gray-500">Siap Membantu 08.00 - 22.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 container mx-auto px-4 lg:px-8">
+        <div class="flex justify-between items-end mb-8">
+            <h3 class="text-2xl font-bold text-sana-navy">Belanja Berdasarkan Kategori</h3>
+            <a href="#" class="text-sm text-sana-navy font-medium hover:underline flex items-center gap-1">
+                Lihat Semua <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+        
+        <div class="flex overflow-x-auto hide-scrollbar gap-4 md:grid md:grid-cols-6 md:gap-6 pb-4">
+            <!-- Category 1 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Atasan" alt="Atasan" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Atasan</h4>
+            </div>
+            <!-- Category 2 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Dress" alt="Dress" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Dress</h4>
+            </div>
+            <!-- Category 3 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Rok" alt="Rok" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Rok</h4>
+            </div>
+            <!-- Category 4 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Celana" alt="Celana" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Celana</h4>
+            </div>
+            <!-- Category 5 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Outer" alt="Outer" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Outer</h4>
+            </div>
+            <!-- Category 6 -->
+            <div class="flex flex-col items-center min-w-[120px] md:min-w-0 group cursor-pointer">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 bg-sana-soft border-4 border-transparent group-hover:border-sana-navy transition-all duration-300">
+                    <img src="https://placehold.co/200x200/f5f3f0/122543?text=Hijab" alt="Hijab & Aksesoris" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-semibold text-sana-navy text-sm text-center group-hover:text-blue-700 transition">Hijab & Aksesoris</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="py-12 bg-gray-50/50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-end mb-8">
+                <h3 class="text-2xl font-bold text-sana-navy">Produk Terbaru</h3>
+                <a href="#" class="text-sm text-sana-navy font-medium hover:underline flex items-center gap-1">
+                    Lihat Semua <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative border border-gray-100 p-2">
+                    <button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 transition backdrop-blur-sm shadow-sm">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="relative overflow-hidden rounded-lg bg-sana-soft h-64 md:h-80 mb-4">
+                        <img src="https://placehold.co/400x500/e8e6e1/122543?text=Blouse" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="font-semibold text-sana-navy text-sm mb-1 truncate">Blouse Lengan Balon</h4>
+                        <p class="text-xs text-gray-500 mb-3">Cotton Premium</p>
+                        <div class="flex items-end justify-between">
+                            <span class="font-bold text-sana-navy">Rp 159.000</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fa-solid fa-star text-sana-gold text-[10px]"></i>
+                                <span class="text-xs text-gray-600">4.8 <span class="text-gray-400">(120)</span></span>
+                            </div>
+                        </div>
+                        <div class="mt-3 flex gap-1">
+                            <span class="block w-3 h-3 rounded-full bg-[#f4f1e1] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#4a5568] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#e2e8f0] border border-gray-200"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative border border-gray-100 p-2">
+                    <button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 transition backdrop-blur-sm shadow-sm">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="relative overflow-hidden rounded-lg bg-sana-soft h-64 md:h-80 mb-4">
+                        <img src="https://placehold.co/400x500/e8e6e1/122543?text=Dress" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="font-semibold text-sana-navy text-sm mb-1 truncate">Dress Maxi Polos</h4>
+                        <p class="text-xs text-gray-500 mb-3">Milo Crepe Premium</p>
+                        <div class="flex items-end justify-between">
+                            <span class="font-bold text-sana-navy">Rp 229.000</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fa-solid fa-star text-sana-gold text-[10px]"></i>
+                                <span class="text-xs text-gray-600">4.9 <span class="text-gray-400">(98)</span></span>
+                            </div>
+                        </div>
+                        <div class="mt-3 flex gap-1">
+                            <span class="block w-3 h-3 rounded-full bg-[#dca6a6] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#2d3748] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#cbd5e1] border border-gray-200"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative border border-gray-100 p-2">
+                    <button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 transition backdrop-blur-sm shadow-sm">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="relative overflow-hidden rounded-lg bg-sana-soft h-64 md:h-80 mb-4">
+                        <img src="https://placehold.co/400x500/e8e6e1/122543?text=Kemeja" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="font-semibold text-sana-navy text-sm mb-1 truncate">Kemeja Oversize</h4>
+                        <p class="text-xs text-gray-500 mb-3">Cotton Premium</p>
+                        <div class="flex items-end justify-between">
+                            <span class="font-bold text-sana-navy">Rp 179.000</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fa-solid fa-star text-sana-gold text-[10px]"></i>
+                                <span class="text-xs text-gray-600">4.7 <span class="text-gray-400">(84)</span></span>
+                            </div>
+                        </div>
+                        <div class="mt-3 flex gap-1">
+                            <span class="block w-3 h-3 rounded-full bg-black border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#e2e8f0] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#c2a688] border border-gray-200"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative border border-gray-100 p-2">
+                    <button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 transition backdrop-blur-sm shadow-sm">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="relative overflow-hidden rounded-lg bg-sana-soft h-64 md:h-80 mb-4">
+                        <img src="https://placehold.co/400x500/e8e6e1/122543?text=Kulot" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="font-semibold text-sana-navy text-sm mb-1 truncate">Celana Kulot</h4>
+                        <p class="text-xs text-gray-500 mb-3">Waffle Premium</p>
+                        <div class="flex items-end justify-between">
+                            <span class="font-bold text-sana-navy">Rp 149.000</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fa-solid fa-star text-sana-gold text-[10px]"></i>
+                                <span class="text-xs text-gray-600">4.8 <span class="text-gray-400">(76)</span></span>
+                            </div>
+                        </div>
+                        <div class="mt-3 flex gap-1">
+                            <span class="block w-3 h-3 rounded-full bg-[#f8fafc] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#e2e8f0] border border-gray-200"></span>
+                            <span class="block w-3 h-3 rounded-full bg-[#c2a688] border border-gray-200"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banner Section -->
+    <section class="py-12 container mx-auto px-4 lg:px-8">
+        <div class="bg-sana-soft rounded-2xl overflow-hidden relative flex flex-col md:flex-row items-center">
+            <div class="p-8 md:p-12 w-full md:w-1/2 z-10 relative">
+                <div class="flex items-center gap-2 text-sana-navy mb-3">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span class="font-semibold text-sm">Koleksi Terbaru</span>
+                </div>
+                <h3 class="font-serif text-4xl md:text-5xl font-bold text-sana-navy mb-2">Diskon Spesial</h3>
+                <p class="text-gray-600 mb-6 text-sm md:text-base">Hingga 50% untuk koleksi pilihan</p>
+                <button class="bg-sana-navy text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition flex items-center gap-2 group w-fit">
+                    Belanja Sekarang 
+                    <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            
+            <div class="w-full md:w-1/2 h-64 md:h-full relative">
+                <!-- Using placehold to simulate the rack of clothes -->
+                <img src="https://placehold.co/800x400/e2dcd0/122543?text=Promo+Image" alt="Promo" class="w-full h-full object-cover">
+                <!-- Decorative text -->
+                <div class="absolute bottom-8 right-8 z-10 transform -rotate-12 hidden md:block">
+                    <p class="font-serif text-3xl text-sana-navy opacity-70">Good</p>
+                    <p class="font-serif text-3xl text-sana-navy opacity-70 ml-4">Clothes</p>
+                    <p class="font-serif text-3xl text-sana-navy opacity-70 ml-8">Good</p>
+                    <p class="font-serif text-3xl text-sana-navy opacity-70 ml-12">Mood <i class="fa-regular fa-heart text-xl"></i></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 container mx-auto px-4 lg:px-8 border-t border-gray-100">
+        <h3 class="text-2xl font-bold text-sana-navy mb-10">Mengapa Memilih SANA Cloth?</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-full border border-sana-border flex items-center justify-center shrink-0 text-sana-navy bg-white">
+                    <i class="fa-solid fa-leaf text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sana-navy text-sm mb-1">Desain Eksklusif</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Model selalu up to date dan kekinian.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-full border border-sana-border flex items-center justify-center shrink-0 text-sana-navy bg-white">
+                    <i class="fa-regular fa-gem text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sana-navy text-sm mb-1">Kualitas Terbaik</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Bahan nyaman, adem dan tahan lama.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-full border border-sana-border flex items-center justify-center shrink-0 text-sana-navy bg-white">
+                    <i class="fa-regular fa-heart text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sana-navy text-sm mb-1">Harga Terjangkau</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Tampil stylish tanpa menguras kantong.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-full border border-sana-border flex items-center justify-center shrink-0 text-sana-navy bg-white">
+                    <i class="fa-regular fa-star text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sana-navy text-sm mb-1">Kepuasan Pelanggan</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Ribuan pelanggan puas telah membuktikan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sana-navy text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="lg:col-span-4">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-leaf text-3xl text-white"></i>
+                        <div>
+                            <h1 class="font-serif text-2xl font-bold leading-none tracking-wider text-white">SANA</h1>
+                            <p class="text-[0.65rem] uppercase tracking-[0.2em] font-semibold text-white">C l o t h</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-6 max-w-sm">
+                        Fashion sederhana, untuk kamu yang luar biasa.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-sana-navy transition"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-sana-navy transition"><i class="fa-brands fa-tiktok text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-sana-navy transition"><i class="fa-brands fa-youtube text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-sana-navy transition"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#" class="hover:text-white transition">Koleksi</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold mb-4">Kategori</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Atasan</a></li>
+                        <li><a href="#" class="hover:text-white transition">Dress</a></li>
+                        <li><a href="#" class="hover:text-white transition">Rok</a></li>
+                        <li><a href="#" class="hover:text-white transition">Celana</a></li>
+                        <li><a href="#" class="hover:text-white transition">Outer</a></li>
+                        <li><a href="#" class="hover:text-white transition">Hijab & Aksesoris</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="lg:col-span-4">
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-sm text-gray-300 mb-4">Dapatkan informasi produk terbaru, promo spesial dan update koleksi kami.</p>
+                    <form class="relative">
+                        <input type="email" placeholder="Masukkan email kamu" class="w-full bg-white text-gray-800 rounded-full py-3 pl-4 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300">
+                        <button type="submit" class="absolute right-1 top-1 w-9 h-9 bg-sana-navy text-white rounded-full flex items-center justify-center hover:opacity-90 transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-4">
+                <p>&copy; 2026 SANA Cloth. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition">Syarat & Ketentuan</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-white transition">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to top button -->
+        <a href="#" class="fixed bottom-6 right-6 w-10 h-10 bg-white text-sana-navy rounded-full flex items-center justify-center shadow-lg hover:-translate-y-1 transition-transform z-50">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+    </footer>
+
+</body>
+</html>
