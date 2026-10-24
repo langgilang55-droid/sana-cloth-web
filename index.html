@@ -477,6 +477,22 @@
             <i class="fa-solid fa-chevron-up"></i>
         </a>
     </footer>
-
+<!-- Script untuk memindahkan garis bawah menu navigasi -->
+    <script>
+        // Memilih semua tautan di dalam menu navigasi
+        const navLinks = document.querySelectorAll('nav a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // 1. Ubah semua menu menjadi warna abu-abu tanpa garis bawah
+                navLinks.forEach(nav => {
+                    nav.className = 'text-gray-500 hover:text-sana-navy transition';
+                });
+                
+                // 2. Tambahkan warna biru dan garis bawah khusus pada menu yang diklik
+                this.className = 'text-sana-navy border-b-2 border-sana-navy pb-1';
+            });
+        });
+    </script>
 </body>
 </html>
